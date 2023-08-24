@@ -1,7 +1,7 @@
 import time
 import os
 import random
-i=0
+i=1
 f2 = open("script.txt", "r")
 f2 = f2.read().replace("'", "").split(",")
 while True:
