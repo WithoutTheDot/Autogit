@@ -16,6 +16,6 @@ while True:
     os.system(f"git commit -m \"{i} commit\"")
     os.system("git push")
     x=random.randint(2700, 86400)
-    print(f"Waiting {x/60/60} mins before next commit")
+    print(f"Waiting {x/60/60} hours before next commit")
     time.sleep(x) #Between 45mins and 1day
     
