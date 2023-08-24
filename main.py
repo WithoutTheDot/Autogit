@@ -1,14 +1,22 @@
 import time
-import subprocess
+import os
+import random
 i=0
+f2 = open("script.txt", "r")
+f2 = f2.read().replace("'", "").split(",")
+os.system("@echo off")
 while True:
-    f = open("main_file.txt", "w")
-    f2 = open("script.txt", "r")
-    f2 = list(f2.read())
-    f.write(f2[i])
+    f = open("main_file.txt", "a")
+    word = f2[i]
+    print(word)
+    f.write(word)
+    f.close()
     i+=1
-    subprocess.run(["git", "add", "."])
-    subprocess.run(["git", "commit","-m" ,f"{i} commit"])
-    subprocess.run(["git", "push"])
-    quit()
+    print(f"Current num: {i}")
+    os.system("git add .")
+    os.system(f"git commit -m \"{i} commit\"")
+    os.system("git push")
+    #x=random.randint(2700, 86400)
+    #print(f"Waiting {x/60} mins before next commit")
+    #time.sleep(x) #Between 45mins and 1day
     
